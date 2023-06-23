@@ -4,10 +4,12 @@ pipeline{
         nodejs "mynodejs"
     }
     stages{
-        stage("A"){
+        stage("Get-code"){
             steps{
                 sh 'node -v'
-                echo "========executing A========"
+                echo "getting code from git"
+                sh 'git clone https://github.com/navin-kumar-srnk/nodejsCiCdTestApp.git'
+                sh 'ls'
             }
             post{
                 always{

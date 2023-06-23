@@ -10,8 +10,8 @@ pipeline{
               sh 'pwd'
               sh 'ls'
               sh 'cd nodejsCiCdTestApp'
-              sh 'chmod 400 naveenServe.pem'
-              sh 'ssh -i naveenServe.pem ubuntu@13.53.168.70'
+              sh 'chmod 400 ./naveenServe.pem'
+              sh 'ssh -i ./naveenServe.pem ubuntu@13.53.168.70'
             }
             post{
                 always{

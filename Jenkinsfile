@@ -1,9 +1,12 @@
 pipeline{
     agent any
+    tools {
+        nodejs "mynodejs"
+    }
     stages{
         stage("A"){
             steps{
-                sh 'whoami'
+                sh 'node -v'
                 echo "========executing A========"
             }
             post{

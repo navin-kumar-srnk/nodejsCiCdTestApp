@@ -7,9 +7,18 @@ pipeline{
         stage("Get-code"){
             steps{
               echo 'login into aws intance'
-              sh 'chmod 400 ./naveenServer.pem'
-              sh 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70'
-              sh 'ls'
+           
+              script {
+                 
+
+                    // Copy the built project to the EC2 instance
+                    // sh "scp -i ${sshKey} -r * ${sshUser}@${ec2Ip}:${deployDir}"
+
+                    // SSH into the EC2 instance and execute deployment commands
+                    sh 'chmod 400 ./naveenServer.pem'
+                    sh 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70'
+                    sh 'ls'
+                }
             }
             post{
                 always{

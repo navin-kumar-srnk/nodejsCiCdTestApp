@@ -17,7 +17,7 @@ pipeline{
                     // SSH into the EC2 instance and execute deployment commands
                     sh 'chmod 400 ./naveenServer.pem'
                     sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70 'rm -rf nodejsCiCdTestApp && git clone https://github.com/navin-kumar-srnk/nodejsCiCdTestApp.git '"
-                                       sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70 'cd nodejsCiCdTestApp && ls &&npm i && pm2 start'"
+                                       sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70   && /home/ubuntu/.nvm/versions/node/v14.21.3/bin/npm i && pm2 start'"
                     
                 }
             }

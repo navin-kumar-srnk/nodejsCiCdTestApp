@@ -7,11 +7,8 @@ pipeline{
         stage("Get-code"){
             steps{
               echo 'login into aws intance'
-              sh 'pwd'
-              sh 'ls'
-              sh 'cd nodejsCiCdTestApp'
-              sh 'chmod 400 ./naveenServe.pem'
-              sh 'ssh -i ./naveenServe.pem ubuntu@13.53.168.70'
+              sh 'chmod 400 ./naveenServer.pem'
+              sh 'ssh -i ./naveenServer.pem ubuntu@13.53.168.70'
             }
             post{
                 always{

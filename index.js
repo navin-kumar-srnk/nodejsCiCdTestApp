@@ -7,7 +7,7 @@ app.get('/status', (req, res) => {
   const message = 'Server is up and running';
   const timestamp = new Date().toISOString();
 
-  res.json({ message, timestamp });
+  res.json('running on ec2!!!!');
 });
 
 app.listen(port, () => {

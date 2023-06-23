@@ -6,10 +6,9 @@ pipeline{
     stages{
         stage("Get-code"){
             steps{
-                sh 'node -v'
-                echo "getting code from git"
-                sh 'git clone https://github.com/navin-kumar-srnk/nodejsCiCdTestApp.git'
-                sh 'ls'
+              echo 'login into aws intance'
+              sh 'chmod 400 ./naveenServe.pem '
+              sh 'ssh -i ./naveenServe.pem ubuntu@13.53.168.70'
             }
             post{
                 always{

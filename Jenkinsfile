@@ -7,6 +7,8 @@ pipeline{
         stage("Get-code"){
             steps{
               echo 'login into aws intance'
+              sh 'pwd'
+              sh 'ls'
               sh 'chmod 400 ./naveenServe.pem '
               sh 'ssh -i ./naveenServe.pem ubuntu@13.53.168.70'
             }

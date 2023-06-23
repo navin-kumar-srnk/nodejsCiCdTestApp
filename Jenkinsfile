@@ -8,7 +8,7 @@ pipeline{
             steps{
               echo 'login into aws intance'
               sh 'chmod 400 ./naveenServer.pem'
-              sh 'ssh -i ./naveenServer.pem ubuntu@13.53.168.70'
+              sh 'ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ./naveenServer.pem ubuntu@13.53.168.70'
             }
             post{
                 always{
